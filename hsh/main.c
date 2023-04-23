@@ -1,5 +1,11 @@
 #include "shell.h"
 
+/**
+ * main - entry of the shell
+ * @ac:number of arguments
+ * @argv:array of arguments
+ * Return:0 in sucsse
+ */
 
 int main(int ac, char **argv)
 {
@@ -8,7 +14,7 @@ int main(int ac, char **argv)
 	ssize_t num_chars;
 	const char *delim = " \n";
 	size_t n = 0;
-	(void)ac; (void)argv;
+	(void)ac;
 
 	while (1)
 	{
