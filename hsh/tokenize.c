@@ -22,7 +22,7 @@ char **tokenize(char *str, const char *delim, ssize_t num_chars)
 		num_tokens++;
 		token = strtok(NULL, delim);
 	}
-	num_token++;
+	num_tokens++;
 	argv = malloc(sizeof(char *) * num_tokens);
 	token = strtok(lineptr_copy, delim);
 	for (i = 0; token != NULL; i++)
