@@ -20,6 +20,7 @@ int main(int ac, char **argv)
 	}
 	printf("%s\n", lineptr);
 	argv = tokenize(lineptr, delim, num_chars);
+	execute(argv);
 	free(lineptr);
 	lineptr = NULL;
 	n = 0;
