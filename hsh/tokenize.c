@@ -19,11 +19,11 @@ char **tokenize(char *str, const char *delim, ssize_t num_chars)
 	token = strtok(str, delim);
 	while (token != NULL)
 	{
-		num_token++;
+		num_tokens++;
 		token = strtok(NULL, delim);
 	}
 	num_token++;
-	argv = malloc(sizeof(char *) * mum_tokens);
+	argv = malloc(sizeof(char *) * num_tokens);
 	token = strtok(lineptr_copy, delim);
 	for (i = 0; token != NULL; i++)
 	{
