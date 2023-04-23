@@ -8,13 +8,15 @@
 
 void execute(char **argv)
 {
-	char *comand = NULL;
+	char *comand = NULL, *real_comand = NULL;
 
 	if (argv)
 	{
 		comand = argv[0];
 
-		if (execve(comand, argv, NULL) == -1)
+		real_comand = get_path(comand);
+
+		if (execve(real_comand, argv, NULL) == -1)
 		{
 			perror("Error:");
 		};
