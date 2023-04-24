@@ -24,7 +24,7 @@ int main(int ac, char **argv)
 	{
 		return (-1);
 	}
-	printf("%s\n", lineptr);
+	/*printf("%s\n", lineptr);*/
 	argv = tokenize(lineptr, delim, num_chars);
 	execute(argv);
 	free(lineptr);
