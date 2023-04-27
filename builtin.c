@@ -8,7 +8,7 @@ void env_function(char **arg)
 {
 	int i;
 
-	if (arg[0] == NULL)
+	if (arg[1] != NULL)
 		fprintf(stderr, "env: %s : No such file or directory\n", arg[1]);
 	else
 	{
@@ -64,7 +64,7 @@ void unset_env(char **arg)
  */
 void free_arr(char **arr)
 {
-	int i;
+	int i = 0;
 
 	if (arr == NULL)
 		return;
