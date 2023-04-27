@@ -1,10 +1,11 @@
 #include "shell.h"
 
-int exit_status = 0;
+/*int exit_status = 0;*/
 /**
  * main - entry of the shell
  * @ac:number of arguments
  * @argv:array of arguments
+ * @envp:enviornment variable
  * Return:0 in sucsse
  */
 

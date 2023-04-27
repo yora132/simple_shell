@@ -3,6 +3,7 @@
 /**
  * execute - execute a command
  * @argv:arry of string
+ * @envp: the enviroment variable
  * Return:nothing
  */
 
