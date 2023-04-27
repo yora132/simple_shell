@@ -33,7 +33,7 @@ void execute(char **argv, char **envp)
 
 				if (execve(real_comand, argv, envp) == -1)
 				{
-					perror("Error:");
+					perror("(hsh)$:");
 				};
 			}
 			else
