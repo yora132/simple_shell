@@ -22,8 +22,12 @@ void execute(char **argv, char **envp)
 		}
 		else if (strcmp(comand, "env") == 0)
 		{
-			return;
+			env_function(argv);
 		}
+		else if (strcmp(comand, "setenv") == 0)
+			set_env(argv);
+		else if(strcmp(comand, "unsetenv") == 0)
+			unset_env(argv);
 		else
 		{
 			pid = fork();
