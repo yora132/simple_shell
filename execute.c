@@ -10,8 +10,6 @@
 void execute(char **argv, char **envp)
 {
 	char *comand = NULL, *real_comand = NULL;
-	pid_t pid;
-	int status;
 
 	if (argv)
 	{
@@ -26,25 +24,17 @@ void execute(char **argv, char **envp)
 		}
 		else if (strcmp(comand, "setenv") == 0)
 			set_env(argv);
-		else if(strcmp(comand, "unsetenv") == 0)
+		else if (strcmp(comand, "unsetenv") == 0)
 			unset_env(argv);
 		else
 		{
-			pid = fork();
-			if (pid == 0)
-			{
-				real_comand = get_path(comand);
+			real_comand = get_path(comand);
 
-				if (execve(real_comand, argv, envp) == -1)
-				{
-					fprintf(stderr, "./hsh: No such file or directory\n");
-				};
-			}
-			else
+			if (execve(real_comand, argv, envp) == -1)
 			{
-				wait(&status);
-				/*exit_status = WIFEXITED(status) ? WEXITSTATUS(status) : 0;*/
-			}
+				fprintf(stderr, "./hsh: No such file or directory\n");
+			};
 		}
+
 	}
 }

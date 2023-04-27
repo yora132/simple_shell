@@ -54,4 +54,3 @@ void unset_env(char **arg)
 	if (result != -1)
 		fprintf(stderr, "Error unsetting the variable\n");
 }
-
