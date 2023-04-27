@@ -11,7 +11,7 @@
 
 int main(int ac, char **argv, char **envp)
 {
-	char *prompt = "(hsh)$ ";
+	char *prompt = "#cisfun$ ";
 	char *lineptr;
 	ssize_t num_chars;
 	const char *delim = " \n";
