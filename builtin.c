@@ -15,6 +15,7 @@ void env_function(char **arg)
 		for (i = 0; environ[i] != NULL; i++)
 			printf("%s\n", environ[i]);
 	}
+	free_arr(arg);
 }
 /**
  * set_env - sets an environment variable
@@ -39,6 +40,7 @@ void set_env(char **arg)
 		fprintf(stderr, "Error setting the variable\n");
 	if (result == -1)
 		fprintf(stderr, "Error setting the variable\n");
+	free_arr(arg);
 }
 /**
  * unset_env - delets an environment variable
@@ -53,4 +55,23 @@ void unset_env(char **arg)
 	result = unsetenv(variable);
 	if (result != -1)
 		fprintf(stderr, "Error unsetting the variable\n");
+	free_arr(arg);
+}
+/**
+ * free_arr - free memory
+ * @arr: input
+ * Return: void
+ */
+void free_arr(char **arr)
+{
+	int i;
+
+	if (arr == NULL)
+		return;
+	while (arr[i] != NULL)
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 }

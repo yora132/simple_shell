@@ -21,11 +21,18 @@ void execute(char **argv, char **envp)
 		else if (strcmp(comand, "env") == 0)
 		{
 			env_function(argv);
+			return;
 		}
 		else if (strcmp(comand, "setenv") == 0)
+		{
 			set_env(argv);
+			return;
+		}
 		else if (strcmp(comand, "unsetenv") == 0)
+		{
 			unset_env(argv);
+			return;
+		}
 		else
 		{
 			real_comand = get_path(comand);

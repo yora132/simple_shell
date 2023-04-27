@@ -18,4 +18,5 @@ char *get_path(char *comand);
 void env_function(char **arg);
 void set_env(char **arg);
 void unset_env(char **arg);
+void free_arr(char **arr);
 #endif
