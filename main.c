@@ -1,5 +1,6 @@
 #include "shell.h"
 
+int exit_status = 0;
 /**
  * main - entry of the shell
  * @ac:number of arguments
@@ -7,7 +8,7 @@
  * Return:0 in sucsse
  */
 
-int main(int ac, char **argv)
+int main(int ac, char **argv, char **envp)
 {
 	char *prompt = "(hsh) $";
 	char *lineptr;
@@ -26,7 +27,7 @@ int main(int ac, char **argv)
 	}
 	/*printf("%s\n", lineptr);*/
 	argv = tokenize(lineptr, delim, num_chars);
-	execute(argv);
+	execute(argv, envp);
 	free(lineptr);
 	lineptr = NULL;
 	n = 0;
